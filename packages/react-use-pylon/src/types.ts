@@ -26,7 +26,19 @@ export type RawPylonProps = RawPylonChatSettings;
 export type PylonProps = PylonChatSettings;
 
 // TODO: decide whether or not to keep this
-export type PylonMethod = 'hide' | 'show' | 'onChangeUnreadMessagesCount';
+export type PylonMethod =
+  | 'hide'
+  | 'show'
+  | 'onShow'
+  | 'onHide'
+  | 'onChangeUnreadMessagesCount'
+  | 'hideChatBubble'
+  | 'showChatBubble'
+  | 'setNewIssueCustomFields'
+  | 'setTicketFormFields'
+  | 'showNewMessage'
+  | 'showTicketForm'
+  | 'showKnowledgeBaseArticle';
 
 export type LogLevel = 'info' | 'error' | 'warn' | 'debug';
 
@@ -44,7 +56,21 @@ export type PylonContextValues = {
   hide: () => void;
 
   show: () => void;
-  
+
+  hideChatBubble: () => void;
+
+  showChatBubble: () => void;
+
+  setNewIssueCustomFields: (fields: Record<string, string>) => void;
+
+  setTicketFormFields: (fields: Record<string, string>) => void;
+
+  showNewMessage: (message: string) => void;
+
+  showTicketForm: (formSlug: string) => void;
+
+  showKnowledgeBaseArticle: (articleId: string) => void;
+
   /**
    * The visibility status of the messenger.
    */
