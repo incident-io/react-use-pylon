@@ -184,9 +184,12 @@ export const PylonProvider: React.FC<
 
   const showKnowledgeBaseArticle = React.useCallback(
     (articleId: string) => {
-      ensurePylon('showKnowledgeBaseArticle', () =>
-        PylonAPI('showKnowledgeBaseArticle', articleId),
-      );
+      ensurePylon('showKnowledgeBaseArticle', () => {
+        // When showing the knowledgebase, ensure the bubble is visible,
+        // otherwise the 'close' button will not be visible
+        PylonAPI('show');
+        PylonAPI('showKnowledgeBaseArticle', articleId);
+      });
     },
     [ensurePylon],
   );
