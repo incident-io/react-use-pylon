@@ -4,6 +4,8 @@ export type RawPylonChatSettings = {
   name?: string;
   avatar_url?: string;
   email_hash?: string;
+  account_id?: string;
+  account_external_id?: string;
 };
 
 export type PylonChatSettings = {
@@ -20,6 +22,13 @@ export type PylonChatSettings = {
 
   /** (Optional) If you are using Pylon's identity verification */
   emailHash?: string;
+
+  /** (Optional) If you want to force association of an issue/contact with a certain account.*/
+  accountId?: string;
+
+  // (Optional) If you want to force association of an issue/contact with a certain account.
+  // Learn more about external IDs here: https://docs.usepylon.com/pylon-docs/developer/api/external-ids.
+  accountExternalId?: string;
 };
 
 export type RawPylonProps = RawPylonChatSettings;

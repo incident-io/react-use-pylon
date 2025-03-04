@@ -10,5 +10,7 @@ export const mapPylonPropsToRawPylonProps = (
     name: pylonProps?.name,
     avatar_url: pylonProps?.avatarUrl,
     email_hash: pylonProps?.emailHash,
+    account_id: pylonProps?.accountId,
+    account_external_id: pylonProps?.accountExternalId,
   });
 };
